@@ -52,7 +52,7 @@ class Content extends React.Component {
     return (
 
       <div>
-      <h1 id="head">Welcome to the Crypto Marketplace</h1>
+      <h1 id="head">Welcome to the Crypto Marketplace.</h1>
        <div className="App-header">
         <h1>{coins}</h1>
        </div>
