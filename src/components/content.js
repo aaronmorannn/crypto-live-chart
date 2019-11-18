@@ -1,5 +1,11 @@
 import React from 'react';
 import '../App.css';
+import {AiOutlineFire} from 'react-icons/ai';
+import {FiActivity} from 'react-icons/fi';
+
+
+
+
 
 
 class Content extends React.Component {
@@ -39,20 +45,23 @@ class Content extends React.Component {
     } else{
 
       let coins = this.state.dataSource.map((val,key) =>{
-          return <div className="cryptocurrency" key={key}>
+          return <div className="cryptocurrency-market" key={key}>
+          <h1><AiOutlineFire/> {val.rank}</h1>
+          <hr></hr>
           <h1>{val.name}</h1>
           <h3>{val.symbol}</h3>
-          <h3>Rank {val.rank}</h3>
-          <p>${val.price_usd}</p>
-          <p>{val.percent_change_1h}%</p>
+          <p id="price">${val.price_usd}</p>
+          <p><FiActivity/>{val.percent_change_1h}%</p>
           </div>
       });
 
 
     return (
 
-      <div>
-      <h1 id="head">Welcome to the Crypto Marketplace. HELLKO WORLD</h1>
+      <div className="App-header">
+      <br></br>
+      <h1 id="headMarket">Welcome to the Crypto Marketplace</h1>
+      <hr></hr>
        <div className="App-header">
         <h1>{coins}</h1>
        </div>

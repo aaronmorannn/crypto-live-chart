@@ -10,7 +10,7 @@
 }
 
 .App-header {
-  background-color: #88a9e7;
+  background-color:#88a9e7;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -52,18 +52,52 @@
   font-size: xx-large;
 
 }
+
+
+#headMarket{
+  color: whitesmoke;
+  font-size: xx-large;
+
+}
+
+#price{
+  color: green;
+}
+
+Nav.Link {
+  text-decoration: none;
+  color: inherit;
+}
+
+#rank{
+  color: gold;
+}
 .App-link {
   color:  gray;
 }
 
 .cryptocurrency{
-  padding: 1rem 2rem 2rem;
+  padding: 1rem 4rem 2rem;
   margin: 1rem;
   border-radius: 0.5;
+  background-color: whitesmoke;
   min-width: 9rem;
   border: solid 5px rgba(0,0,0,0.05);
-  border-bottom: solid 4px white;
-  border-top: solid 4px white;
+  border-bottom: solid 4px rgba(0,0,0,0.05);
+  border-top: solid 4px rgba(0,0,0,0.05);
+
+}
+
+.cryptocurrency-market{
+  padding: 1rem 4rem 2rem;
+  margin: 1rem;
+  border-radius: 0.5;
+  background-color: whitesmoke;
+  min-width: 9rem;
+  border: solid 5px rgba(0,0,0,0.05);
+  border-bottom: solid 4px rgba(0,0,0,0.05);
+  border-top: solid 4px rgba(0,0,0,0.05);
+  float: left;
 
 }
 
@@ -78,5 +112,4 @@
   background-color: whitesmoke;
 
 }
-
 

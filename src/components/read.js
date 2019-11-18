@@ -28,7 +28,7 @@ class Read extends React.Component{
             <div className="cryptocurrency">
                 <h4>Below displays your recent purchase history</h4>
                 <h1><MovieRead myMovies={this.state.movies}></MovieRead></h1>
-                {/* <h1>Total balance =<MovieRead myMovies={this.state.movies}></MovieRead></h1> */}
+                <h3>BTC</h3>
 
             </div>
             </div>
