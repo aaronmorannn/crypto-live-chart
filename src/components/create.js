@@ -3,8 +3,6 @@ import axios from 'axios';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 
-
-
 class Create extends React.Component {
 
   
@@ -56,19 +54,18 @@ class Create extends React.Component {
 
   render() {
 
+    // genID(){
+    //   return <p>Hello</p>; 
+    //   // Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+    // }
 
     return (
       <div className="App-header">
+
         {/* <h1 id="head">Purchase Crypto</h1> */}
         <form onSubmit={this.handleSubmit}>
         <div className='cryptocurrency-purchase'>
           <label id="head">Purchase Amount(BTC)</label>
-          {/* <input
-          type='number'
-          className='form-control'
-          value={this.state.Amount}
-          onChange={this.handleMovieTitleChange}
-          ></input> */}
           <TextField
           type="number"
           id="standard-basic"
@@ -79,6 +76,11 @@ class Create extends React.Component {
           onChange={this.handleMovieTitleChange}
         />
         </div>
+        
+        {/* ID GENERATION */}
+        <div className="cryptocurrency">
+          {/* {genID()} */}
+        </div>
        
         <div>
           <Button
@@ -87,6 +89,7 @@ class Create extends React.Component {
           variant="contained" color="primary">
             Preview Purchase
           </Button>
+        
         </div>
         </form>
       </div>

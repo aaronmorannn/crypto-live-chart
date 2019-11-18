@@ -28,16 +28,8 @@ class MovieItem extends React.Component{
 
 
   <Card  border="primary" style={{ width: '28rem' }}>
-  <Card.Header>₿{this.props.movie.amount}</Card.Header>
-  <Card.Body>
-    <blockquote className="blockquote mb-0">
-    <img src={this.props.movie.poster}></img>
-      <footer>
-      {this.props.movie.year}
-      </footer>
-    </blockquote>
-  </Card.Body>
-  <Button variant="primary" onClick={this.DeleteMovie}>Withdraw</Button>
+  <h1><Card.Header>₿{this.props.movie.amount}</Card.Header></h1>
+  <Button variant="dark" onClick={this.DeleteMovie}>Withdraw</Button>
 </Card>
             </div>
         )

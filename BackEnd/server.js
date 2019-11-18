@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
 
-const mongoDB = 'mongodb+srv://aaron:Aaronmoran2411@cluster0-8qas3.mongodb.net/test?retryWrites=true&w=majority';
+const mongoDB = 'mongodb+srv://aaron:Aaronmoran2411@cluster0-8qas3.mongodb.net/purchases?retryWrites=true&w=majority';
 mongoose.connect(mongoDB,{useNewUrlParser:true});
 
 app.use(cors());
@@ -61,7 +61,6 @@ app.get('/api/movies', (req, res) => {
     MovieModel.find((error, data) =>{
         res.json({movies:data});
     })
-
 })
 
 app.get('/api/movies/:id', (req, res)=>{

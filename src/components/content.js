@@ -2,11 +2,8 @@ import React from 'react';
 import '../App.css';
 import {AiOutlineFire} from 'react-icons/ai';
 import {FiActivity} from 'react-icons/fi';
-
-
-
-
-
+import {FaGithub} from 'react-icons/fa';
+import Nav from 'react-bootstrap/Nav';
 
 class Content extends React.Component {
 
@@ -65,8 +62,16 @@ class Content extends React.Component {
        <div className="App-header">
         <h1>{coins}</h1>
        </div>
- 
+       <div>       
+         <hr></hr>
+         <td>
+         <Nav.Link href="https://github.com/Moran98/crypto-wallet"><FaGithub/></Nav.Link> Author : Aaron Moran (G00356519)
+         </td>
+      
       </div>
+
+      </div>
+
     
     );
     }

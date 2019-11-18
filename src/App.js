@@ -8,7 +8,7 @@ import Nav from 'react-bootstrap/Nav';
 import { Switch, Route, BrowserRouter } from 'react-router-dom'
 import Create from './components/create';
 import Read from './components/read';
-import Edit from './components/edit';
+import Withdraw from './components/withdraw';
 import Register from './components/register';
 import Login from './components/login';
 import {FaUserCircle} from 'react-icons/fa';
@@ -29,20 +29,22 @@ class App extends React.Component {
               <Nav.Link href="/content">Market</Nav.Link>
               <Nav.Link href="/read">Wallet</Nav.Link>
               <Nav.Link href="/create">Purchase</Nav.Link>
-              <Nav.Link href="/edit">Withdraw</Nav.Link>
+              <Nav.Link href="/withdraw">Withdraw</Nav.Link>
 
 
             </Nav>
-            <Nav.Link href="/register"> <FaUserCircle/></Nav.Link>
+            <Nav>
+            <Nav.Link a href="/register"> <FaUserCircle size={50}/></Nav.Link>
+            </Nav>
 
           </Navbar>
           <Switch>
             <Route exact path="/" component={Register} />
-            <Route exact path="/content" component={Content} />
+            <Route path="/content" component={Content} />
             <Route path="/create" component={Create} />
             <Route path="/read" component={Read} />
-            <Route path="/edit/:id" component={Edit} />
-            <Route path="/edit" component={Edit} />
+            <Route path="/withdraw/:id" component={Withdraw} />
+            <Route path="/withdraw" component={Withdraw} />
             <Route path="/register" component={Register} />
             <Route path="/login" component={Login} />
 

@@ -24,11 +24,11 @@ class Read extends React.Component{
         return(
             
             <div>
-            <h1 id="head">Welcome to your Wallet</h1>
-            <div className="cryptocurrency">
+            <br></br>
+            <h1 id="headMarket">Welcome to your Wallet</h1>
+            <div className="App-header">
                 <h4>Below displays your recent purchase history</h4>
                 <h1><MovieRead myMovies={this.state.movies}></MovieRead></h1>
-                <h3>BTC</h3>
 
             </div>
             </div>

@@ -1,6 +1,5 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 
 
@@ -27,16 +26,10 @@ class MovieItem extends React.Component{
 
 
   <Card  border="primary" style={{ width: '28rem' }}>
-  <Card.Header>₿{this.props.movie.amount}</Card.Header>
-  <Card.Body>
-    <blockquote className="blockquote mb-0">
-    <img src={this.props.movie.poster}></img>
-      <footer>
-      {this.props.movie.year}
-      </footer>
-    </blockquote>
-  </Card.Body>
-</Card>
+  <Card.Header>₿{this.props.movie.amount}</Card.Header> 
+  </Card>
+  <br></br>
+
             </div>
         )
     }
