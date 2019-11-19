@@ -48,9 +48,17 @@
 }
 
 #head{
-  color: blue;
+  color: black;
   font-size: xx-large;
 
+}
+
+#address{
+  color: rgb(80, 70, 13);
+}
+
+#example{
+  color: lightslategray;
 }
 
 a:link{
@@ -59,7 +67,7 @@ a:link{
 
 
 #headMarket{
-  color: whitesmoke;
+  color: black;
   font-size: xx-large;
 
 }

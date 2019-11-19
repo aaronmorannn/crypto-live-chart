@@ -10,76 +10,73 @@ class Create extends React.Component {
     super(props);
 
     this.state = {Amount:'',
-                  Year:'',
-                Poster:''};
+                  Address:'',};
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleMovieTitleChange = this.handleMovieTitleChange.bind(this);
-    this.handleMovieYearChange = this.handleMovieYearChange.bind(this);
-    this.handleMoviePosterChange = this.handleMoviePosterChange.bind(this);
+    this.handleAddressChange = this.handleAddressChange.bind(this);
   }
   
   handleMovieTitleChange(e){
     this.setState({Amount: e.target.value});
   }
 
-  handleMovieYearChange(e){
-    this.setState({Year: e.target.value});
-  }
-
-  handleMoviePosterChange(e){
-    this.setState({Poster: e.target.value});
+  handleAddressChange(e){
+    this.setState({Address: e.target.value});
   }
 
   handleSubmit(e){
-    alert("Your purchase for the amount €"+this.state.Amount+ " has been received check you updated balance in the Wallet tab.      " + this.state.Year 
-    +"       "+ this.state.Poster);
+    alert("Your purchase for the amount €"+this.state.Amount+ " has been received check you updated balance in the Wallet tab. Sending to    " + this.state.Address 
+    +" .....      ");
     e.preventDefault();
     
     
-                const newMovie = {
+                const newPurchase = {
                   amount: this.state.Amount,
-                  year: this.state.Year,
-                  poster: this.state.Poster
+                  address: this.state.Address,
                 };
-          axios.post('http://localhost:4000/api/movies',newMovie) 
+          axios.post('http://localhost:4000/api/movies',newPurchase) 
           .then()
           .catch();
           
-
-          this.setState({Amount:'',
-                  Year:'',
-                Poster:''});    
+        this.setState({Amount:'',
+              Address:''});    
   }
 
   render() {
 
-    // genID(){
-    //   return <p>Hello</p>; 
-    //   // Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-    // }
-
     return (
       <div className="App-header">
 
-        {/* <h1 id="head">Purchase Crypto</h1> */}
         <form onSubmit={this.handleSubmit}>
         <div className='cryptocurrency-purchase'>
           <label id="head">Purchase Amount(BTC)</label>
+          <h4 id="example">(Limit = 1BTC > €7500)</h4>
           <TextField
           type="number"
           id="standard-basic"
           label="Enter Value."
           margin="normal"
+          required="true"
+          InputProps={{ inputProps: { min: 0.0, max: 1, step:0.000001 } }}
           className='form-control'
           value={this.state.Amount}
           onChange={this.handleMovieTitleChange}
         />
         </div>
         
-        {/* ID GENERATION */}
         <div className="cryptocurrency">
-          {/* {genID()} */}
+        <h4 id="example">(Example - 35zTpEpUkqgRNEsRvhonFBxHtwqiioqNhw)</h4>
+        <TextField
+          type="text"
+          id="standard"
+          label="Enter BTC Address."
+          margin="normal"
+          className='form-control'
+          required="true"
+          value={this.state.Address}
+          onChange={this.handleAddressChange}
+        />
         </div>
        
         <div>

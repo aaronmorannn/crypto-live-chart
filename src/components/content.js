@@ -64,9 +64,9 @@ class Content extends React.Component {
        </div>
        <div>       
          <hr></hr>
-         <td>
+         
          <Nav.Link href="https://github.com/Moran98/crypto-wallet"><FaGithub/></Nav.Link> Author : Aaron Moran (G00356519)
-         </td>
+         
       
       </div>
 

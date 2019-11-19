@@ -34,7 +34,7 @@ class App extends React.Component {
 
             </Nav>
             <Nav>
-            <Nav.Link a href="/register"> <FaUserCircle size={50}/></Nav.Link>
+            <Nav.Link href="/register"> <FaUserCircle size={50}/></Nav.Link>
             </Nav>
 
           </Navbar>

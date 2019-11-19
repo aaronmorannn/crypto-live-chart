@@ -1,3 +1,6 @@
+// Code Below contains content from Server.js from MERN LABS 
+// Code has been changed and altered to suit the needs of the application.
+
 const express = require('express')
 const app = express()
 const port = 4000
@@ -5,15 +8,20 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
+// const mongoose2 = require('mongoose');
+
 
 const mongoDB = 'mongodb+srv://aaron:Aaronmoran2411@cluster0-8qas3.mongodb.net/purchases?retryWrites=true&w=majority';
+// const mongoDB2= 'mongodb+srv://aaron:Aaronmoran2411@cluster0-8qas3.mongodb.net/users?retryWrites=true&w=majority';
+
 mongoose.connect(mongoDB,{useNewUrlParser:true});
+// mongoose2.connect(mongoDB2,{useNewUrlParser:true});
 
 app.use(cors());
-app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-    res.header("Access-Control-Allow-Headers",
+app.use(function (request, response, next) {
+    response.header("Access-Control-Allow-Origin", "*");
+    response.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+    response.header("Access-Control-Allow-Headers",
         "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
@@ -25,95 +33,95 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 const Schema = mongoose.Schema;
+// const Schema2 = mongoose.Schema2;
 
-const movieSchema = new Schema({
+//WALLET VARIABLES
+const wallet = new Schema({
     amount:String,
+    address:String,
 })
 
-const MovieModel = mongoose.model('movie', movieSchema);
+//USER VARIABLES
+// const user = new Schema({
+//     uname:String,
+//     pword:String,
+// })
+
+const WalletModel = mongoose.model('wallet', wallet);
+// const UserModel = mongoose.model('user', user);
 
 
-app.get('/', (req, res) => res.send('Hello World!'))
-
-app.get('/whatever', (req, res) => {
-    res.send('whatever')
+app.get('/name', (request, response) => {
+    console.log(request.query.lastname)
+    res.send('Welcome ' + request.query.firstname +
+        ' ' + request.query.lastname);
 })
 
-app.get('/name', (req, res) => {
-    console.log(req.query.lastname)
-    res.send('Welcome ' + req.query.firstname +
-        ' ' + req.query.lastname);
-})
+//PULLING DATA FROM THE DATABASE 
+app.get('/api/movies', (request, response) => {
 
-app.post('/name', (req, res) => {
-    console.log(req.body.lastname);
-    res.send('post recieved from '
-        + req.body.firstname + ' ' +
-        req.body.lastname)
-})
-
-app.get('/test', (req, res) => {
-    res.sendFile(path.join(__dirname + '/index.html'));
-})
-
-app.get('/api/movies', (req, res) => {
-
-    MovieModel.find((error, data) =>{
-        res.json({movies:data});
+    WalletModel.find((error, data) =>{
+        response.json({movies:data});
     })
 })
 
-app.get('/api/movies/:id', (req, res)=>{
-    console.log(req.params.id);
+//DELETING - WITHDRAWING BALANCE FROM THE DATABASE
+app.delete('/api/movies/:id', (request, response)=>{
+    console.log(request.params.id);
 
-    MovieModel.findById(req.params.id, (error,data)=>{
-        res.json(data);
-    })
-})
-
-app.delete('/api/movies/:id', (req, res)=>{
-    console.log(req.params.id);
-
-    MovieModel.deleteOne({_id: req.params.id},
+    WalletModel.deleteOne({_id: request.params.id},
         (error, data) =>{
-            res.json(data);
+            response.json(data);
         })
 })
 
-app.put('/api/movies/:id',(req,res)=>{
-    console.log("Edit: "+req.params.id);
-    console.log(req.body);
+//EDITING DATA OF USERS FROM DATABASE
+app.put('/api/movies/:id',(request,response)=>{
+    console.log("Edit: "+request.params.id);
+    console.log(request.body);
     
-    MovieModel.findByIdAndUpdate(req.params.id,
-        req.body,
+    WalletModel.findByIdAndUpdate(request.params.id,
+        request.body,
         {new:true},
         (error,data)=>{
-            res.json(data);
+            response.json(data);
         })
 })
 
-app.get('/api/movies/:id', (req,res)=>{
-    console.log("GET: "+req.params.id);
+app.get('/api/movies/:id', (request,response)=>{
+    console.log("GET: "+request.params.id);
 
-    MovieModel.findById(req.params.id,(error, data)=>{
-        res.json(data);
+    WalletModel.findById(request.params.id,(error, data)=>{
+        response.json(data);
     })
 })
 
-app.post('/api/movies', (req,res)=>{
+//ADDING PURCHASE TO DATABASE HISTORY
+app.post('/api/movies', (request,response)=>{
     console.log('Post request Successful');
-    console.log(req.body.amount);
+    console.log(request.body.amount);
+    console.log(request.body.address);
 
-
-    MovieModel.create({
-        amount:req.body.amount, 
+    WalletModel.create({
+        amount:request.body.amount, 
+        address:request.body.address, 
     });
 
-    res.json('post recieved!');
+    response.json('post recieved!');
 })
-app.get('/hello/:name', (req, res) => {
-    console.log(req.params.name);
-    res.send('Hello ' + req.params.name)
-})
+
+//ADDING USER DETAILS TO DATABASE HISTORY
+// app.post('/api/movies', (request,response)=>{
+//     console.log('Post request Successful');
+//     console.log(request.body.uname);
+//     console.log(request.body.pword);
+
+//     UserModel.create({
+//         uname:request.body.uname, 
+//     });
+
+//     response.json('Account Received!');
+// })
+
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

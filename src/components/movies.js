@@ -4,8 +4,8 @@ import MovieItem from './movieitem';
 class Movies extends React.Component{
 
     render(){
-        return this.props.myMovies.map((movie)=>{
-            return <MovieItem key={movie._id} movie={movie}></MovieItem>
+        return this.props.myMovies.map((wallet)=>{
+            return <MovieItem key={wallet._id} wallet={wallet}></MovieItem>
         });
     }
 }

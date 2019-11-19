@@ -11,7 +11,7 @@ class MovieItem extends React.Component{
   }
 
   DeleteMovie(e){
-    axios.delete("http://localhost:4000/api/movies/"+this.props.movie._id)
+    axios.delete("http://localhost:4000/api/movies/"+this.props.wallet._id)
     .then()
     .catch();
 
@@ -26,7 +26,8 @@ class MovieItem extends React.Component{
 
 
   <Card  border="primary" style={{ width: '28rem' }}>
-  <Card.Header>₿{this.props.movie.amount}</Card.Header> 
+  <Card.Header>₿{this.props.wallet.amount}</Card.Header> 
+  <h5 id="address">Recipient Address :({this.props.wallet.address})</h5>
   </Card>
   <br></br>
 
