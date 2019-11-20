@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { Switch, Route, BrowserRouter } from 'react-router-dom'
-import Create from './components/create';
+import Purchase from './components/purchase';
 import Read from './components/read';
 import Withdraw from './components/withdraw';
 import Register from './components/register';
@@ -28,7 +28,7 @@ class App extends React.Component {
             <Nav className="mr-auto">
               <Nav.Link href="/content">Market</Nav.Link>
               <Nav.Link href="/read">Wallet</Nav.Link>
-              <Nav.Link href="/create">Purchase</Nav.Link>
+              <Nav.Link href="/purchase">Purchase</Nav.Link>
               <Nav.Link href="/withdraw">Withdraw</Nav.Link>
 
 
@@ -41,7 +41,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/" component={Register} />
             <Route path="/content" component={Content} />
-            <Route path="/create" component={Create} />
+            <Route path="/purchase" component={Purchase} />
             <Route path="/read" component={Read} />
             <Route path="/withdraw/:id" component={Withdraw} />
             <Route path="/withdraw" component={Withdraw} />

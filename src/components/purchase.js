@@ -3,7 +3,7 @@ import axios from 'axios';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 
-class Create extends React.Component {
+class Purchase extends React.Component {
 
   
   constructor(props){
@@ -35,7 +35,7 @@ class Create extends React.Component {
                   amount: this.state.Amount,
                   address: this.state.Address,
                 };
-          axios.post('http://localhost:4000/api/movies',newPurchase) 
+          axios.post('http://localhost:4000/api/coins',newPurchase) 
           .then()
           .catch();
           
@@ -94,4 +94,4 @@ class Create extends React.Component {
   }
 }
 
-export default Create;
+export default Purchase;

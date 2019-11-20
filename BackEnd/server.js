@@ -58,15 +58,15 @@ app.get('/name', (request, response) => {
 })
 
 //PULLING DATA FROM THE DATABASE 
-app.get('/api/movies', (request, response) => {
+app.get('/api/coins', (request, response) => {
 
     WalletModel.find((error, data) =>{
-        response.json({movies:data});
+        response.json({coins:data});
     })
 })
 
 //DELETING - WITHDRAWING BALANCE FROM THE DATABASE
-app.delete('/api/movies/:id', (request, response)=>{
+app.delete('/api/coins/:id', (request, response)=>{
     console.log(request.params.id);
 
     WalletModel.deleteOne({_id: request.params.id},
@@ -76,7 +76,7 @@ app.delete('/api/movies/:id', (request, response)=>{
 })
 
 //EDITING DATA OF USERS FROM DATABASE
-app.put('/api/movies/:id',(request,response)=>{
+app.put('/api/coins/:id',(request,response)=>{
     console.log("Edit: "+request.params.id);
     console.log(request.body);
     
@@ -88,7 +88,7 @@ app.put('/api/movies/:id',(request,response)=>{
         })
 })
 
-app.get('/api/movies/:id', (request,response)=>{
+app.get('/api/coins/:id', (request,response)=>{
     console.log("GET: "+request.params.id);
 
     WalletModel.findById(request.params.id,(error, data)=>{
@@ -97,7 +97,7 @@ app.get('/api/movies/:id', (request,response)=>{
 })
 
 //ADDING PURCHASE TO DATABASE HISTORY
-app.post('/api/movies', (request,response)=>{
+app.post('/api/coins', (request,response)=>{
     console.log('Post request Successful');
     console.log(request.body.amount);
     console.log(request.body.address);

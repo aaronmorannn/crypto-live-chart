@@ -1,12 +1,12 @@
 import React from 'react';
 import WalletItem from './walletItem';
 
-class MovieRead extends React.Component{
+class Market extends React.Component{
 
     render(){
-        return this.props.myMovies.map((wallet)=>{
+        return this.props.myCoins.map((wallet)=>{
             return <WalletItem key={wallet._id} wallet={wallet}></WalletItem>
         });
     }
 }
-export default MovieRead;
+export default Market;
