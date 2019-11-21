@@ -92,6 +92,8 @@ Nav.Link {
   padding: 1rem 4rem 2rem;
   margin: 1rem;
   border-radius: 0.5;
+  border: solid 1px black;
+
   background-color: whitesmoke;
   min-width: 9rem;
   border: solid 5px rgba(0,0,0,0.05);
@@ -104,6 +106,8 @@ Nav.Link {
   padding: 1rem 4rem 2rem;
   margin: 1rem;
   border-radius: 0.5;
+  border: solid 1px black;
+
   background-color: whitesmoke;
   min-width: 9rem;
   border: solid 5px rgba(0,0,0,0.05);
@@ -118,6 +122,7 @@ Nav.Link {
   margin: 1rem;
   border-radius: 0.5;
   min-width: 9rem;
+  border: solid 1px black;
   border: solid 5px rgba(0,0,0,0.05);
   border-bottom: solid 4px white;
   border-top: solid 4px white;
@@ -130,6 +135,7 @@ Nav.Link {
   margin: 1rem;
   border-radius: 0.5;
   min-width: 9rem;
+  border: solid 1px black;
   border: solid 5px rgba(0,0,0,0.05);
   border-bottom: solid 4px white;
   border-top: solid 4px white;
@@ -137,6 +143,22 @@ Nav.Link {
   align-items: center;
 }
 
-.delete{
-  float: left;
+.username{
+  border-radius: 15px 50px 30px;
+  background: white;
+  padding: 10px; 
+  width: 500px;
+  height: 100px; 
+}
+
+.forms{
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  background-color: #f0f7fb;
+  border: solid 1px black;
+  border-radius: 6px;
+  line-height: 18px;
+  width: 400px;
+  overflow: hidden;
+  padding: 12px;
 }

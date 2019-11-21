@@ -8,10 +8,10 @@ class CoinItem extends React.Component{
 
   constructor(){
     super();
-    this.DeleteMovie = this.DeleteMovie.bind(this);
+    this.DeleteCoin = this.DeleteCoin.bind(this);
   }
 
-  DeleteMovie(e){
+  DeleteCoin(e){
     console.log("Delete Clicked");
     axios.delete("http://localhost:4000/api/coins/"+this.props.wallet._id)
     .then()
@@ -27,7 +27,7 @@ class CoinItem extends React.Component{
             <h1><Card.Header>₿{this.props.wallet.amount}</Card.Header></h1>
             </Card>
             <hr></hr>
-            <Button className="delete" variant="dark" onClick={this.DeleteMovie}>Withdraw</Button>
+            <Button className="delete" variant="dark" onClick={this.DeleteCoin}>Withdraw</Button>
             <br></br>
             </div>
         )

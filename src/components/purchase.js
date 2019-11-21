@@ -13,11 +13,11 @@ class Purchase extends React.Component {
                   Address:'',};
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleMovieTitleChange = this.handleMovieTitleChange.bind(this);
+    this.handlePurchaseAmount = this.handlePurchaseAmount.bind(this);
     this.handleAddressChange = this.handleAddressChange.bind(this);
   }
   
-  handleMovieTitleChange(e){
+  handlePurchaseAmount(e){
     this.setState({Amount: e.target.value});
   }
 
@@ -61,7 +61,7 @@ class Purchase extends React.Component {
           InputProps={{ inputProps: { min: 0.0, max: 1, step:0.000001 } }}
           className='form-control'
           value={this.state.Amount}
-          onChange={this.handleMovieTitleChange}
+          onChange={this.handlePurchaseAmount}
         />
         </div>
         

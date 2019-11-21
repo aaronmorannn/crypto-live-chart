@@ -28,23 +28,26 @@ componentDidMount() {
           <br></br>
           <h1 id="headMarket">Withdraw a Purchase</h1>
               <div className='cryptocurrency-withdraw'>
-              <label id="head">Search for Recipient's Purchases</label>
-              <TextField
-              type="number"
+              {/* <label id="head">List of Purchase's.</label> */}
+              {/* <TextField
+              type="text"
               id="standard-basic"
               label="Enter BTC Address."
               margin="normal"
-              required="true"
               className='form-control'
               value={this.state.Amount}
               onChange={this.handleMovieTitleChange}
             />
-            {/* </div>
-            <div className="App-header"> */}
+
+          <Button
+          type="submit"
+          value="Preview Purchase"
+          variant="contained" color="primary">
+            Search
+          </Button> */}
              <Coins myCoins={this.state.coins}></Coins>
             </div>
-            <br></br>
-            </div>
+             </div>
         )
     }
 }

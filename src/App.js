@@ -12,6 +12,7 @@ import Withdraw from './components/withdraw';
 import Register from './components/register';
 import Login from './components/login';
 import {FaUserCircle} from 'react-icons/fa';
+import UsersRead from './components/usersRead';
 
 
 
@@ -30,6 +31,8 @@ class App extends React.Component {
               <Nav.Link href="/read">Wallet</Nav.Link>
               <Nav.Link href="/purchase">Purchase</Nav.Link>
               <Nav.Link href="/withdraw">Withdraw</Nav.Link>
+              <Nav.Link href="/usersRead">Users</Nav.Link>
+
 
 
             </Nav>
@@ -47,6 +50,8 @@ class App extends React.Component {
             <Route path="/withdraw" component={Withdraw} />
             <Route path="/register" component={Register} />
             <Route path="/login" component={Login} />
+            <Route path="/usersRead" component={UsersRead} />
+
 
 
 

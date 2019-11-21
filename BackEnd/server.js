@@ -8,14 +8,10 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
-// const mongoose2 = require('mongoose');
-
 
 const mongoDB = 'mongodb+srv://aaron:Aaronmoran2411@cluster0-8qas3.mongodb.net/purchases?retryWrites=true&w=majority';
-// const mongoDB2= 'mongodb+srv://aaron:Aaronmoran2411@cluster0-8qas3.mongodb.net/users?retryWrites=true&w=majority';
 
 mongoose.connect(mongoDB,{useNewUrlParser:true});
-// mongoose2.connect(mongoDB2,{useNewUrlParser:true});
 
 app.use(cors());
 app.use(function (request, response, next) {
@@ -33,7 +29,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 const Schema = mongoose.Schema;
-// const Schema2 = mongoose.Schema2;
+const Schema2 = mongoose.Schema;
+
 
 //WALLET VARIABLES
 const wallet = new Schema({
@@ -42,13 +39,15 @@ const wallet = new Schema({
 })
 
 //USER VARIABLES
-// const user = new Schema({
-//     uname:String,
-//     pword:String,
-// })
+const user = new Schema2({
+    uname:String,
+    pword:String,
+    btcADD:String,
+  
+})
 
 const WalletModel = mongoose.model('wallet', wallet);
-// const UserModel = mongoose.model('user', user);
+const UserModel = mongoose.model('users', user);
 
 
 app.get('/name', (request, response) => {
@@ -64,6 +63,15 @@ app.get('/api/coins', (request, response) => {
         response.json({coins:data});
     })
 })
+
+app.get('/api/users', (request, response) => {
+
+    UserModel.find((error, data) =>{
+        response.json({user:data});
+    })
+})
+
+
 
 //DELETING - WITHDRAWING BALANCE FROM THE DATABASE
 app.delete('/api/coins/:id', (request, response)=>{
@@ -88,6 +96,7 @@ app.put('/api/coins/:id',(request,response)=>{
         })
 })
 
+
 app.get('/api/coins/:id', (request,response)=>{
     console.log("GET: "+request.params.id);
 
@@ -95,6 +104,7 @@ app.get('/api/coins/:id', (request,response)=>{
         response.json(data);
     })
 })
+
 
 //ADDING PURCHASE TO DATABASE HISTORY
 app.post('/api/coins', (request,response)=>{
@@ -111,17 +121,18 @@ app.post('/api/coins', (request,response)=>{
 })
 
 //ADDING USER DETAILS TO DATABASE HISTORY
-// app.post('/api/movies', (request,response)=>{
-//     console.log('Post request Successful');
-//     console.log(request.body.uname);
-//     console.log(request.body.pword);
+app.post('/api/users', (request,response)=>{
+    console.log('Post request Successful');
+    console.log(request.body.uname);
+    console.log(request.body.pword);
 
-//     UserModel.create({
-//         uname:request.body.uname, 
-//     });
+    UserModel.create({
+        uname:request.body.uname, 
+        pword:request.body.pword,
+    });
 
-//     response.json('Account Received!');
-// })
+    response.json('Account Received!');
+})
 
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
