@@ -39,7 +39,7 @@ const wallet = new Schema({
 })
 
 //USER VARIABLES
-const user = new Schema2({
+const users = new Schema2({
     uname:String,
     pword:String,
     btcADD:String,
@@ -47,7 +47,7 @@ const user = new Schema2({
 })
 
 const WalletModel = mongoose.model('wallet', wallet);
-const UserModel = mongoose.model('users', user);
+const UserModel = mongoose.model('users', users);
 
 
 app.get('/name', (request, response) => {
@@ -67,7 +67,7 @@ app.get('/api/coins', (request, response) => {
 app.get('/api/users', (request, response) => {
 
     UserModel.find((error, data) =>{
-        response.json({user:data});
+        response.json({users:data});
     })
 })
 

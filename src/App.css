@@ -88,6 +88,10 @@ Nav.Link {
   color:  gray;
 }
 
+#username{
+  color: lightslategrey;
+}
+
 .cryptocurrency{
   padding: 1rem 4rem 2rem;
   margin: 1rem;

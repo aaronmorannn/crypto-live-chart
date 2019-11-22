@@ -11,7 +11,7 @@ class UsersRead extends React.Component{
     componentDidMount() {
         axios.get('http://localhost:4000/api/users')
         .then((response)=>{
-            this.setState({user: response.data.users})
+            this.setState({users: response.data.users})
         })
         .catch((error)=>{
             console.log(error);
@@ -23,7 +23,7 @@ class UsersRead extends React.Component{
             
             <div>
             <br></br>
-            <h1 id="headMarket">Current Registered Users.</h1>
+            <h1 id="headMarket">Current Registered Accounts</h1>
             <div className="App-header">
                 <h1><User myUsers={this.state.users}></User></h1>
 

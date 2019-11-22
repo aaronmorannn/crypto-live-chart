@@ -39,7 +39,7 @@ class Register extends React.Component{
                       uname: this.state.Uname,
                       pword: this.state.Pword,
                     };
-              axios.post('http://localhost:4000/api/user',newUser) 
+              axios.post('http://localhost:4000/api/users',newUser) 
               .then()
               .catch();
               
