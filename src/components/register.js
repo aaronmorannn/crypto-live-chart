@@ -6,6 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 import Login from './login';
 import TextField from '@material-ui/core/TextField';
 import axios from 'axios';
+import swal from 'sweetalert';
 
 
 
@@ -15,12 +16,13 @@ class Register extends React.Component{
         super(props);
     
         this.state = {Uname:'',
-                      Pword:''};
+                      Pword:'',
+                    BTC:''};
     
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleUnameChange = this.handleUnameChange.bind(this);
         this.handlePwordChange = this.handlePwordChange.bind(this);
-
+        this.handleBTCChange = this.handleBTCChange.bind(this);
       }
       
       handleUnameChange(e){
@@ -31,20 +33,26 @@ class Register extends React.Component{
         this.setState({Pword: e.target.value});
       }
 
+      handleBTCChange(e){
+        this.setState({BTC: e.target.value});
+      }
+
       handleSubmit(e){
-        alert("Your Account has been successfully created." + " Welcome " + this.state.Uname);
+        swal("Congratulations!", "You have created your account!", "success");
+        // alert("Your Account has been successfully created." + " Welcome " + this.state.Uname);
         e.preventDefault();
       
                     const newUser = {
                       uname: this.state.Uname,
                       pword: this.state.Pword,
+                      btc : this.state.BTC,
                     };
               axios.post('http://localhost:4000/api/users',newUser) 
               .then()
               .catch();
               
             this.setState({Uname:'',
-            Pword:''});    
+            Pword:'', BTC:''});    
       }
 
     render(){

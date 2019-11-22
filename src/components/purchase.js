@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+import swal from 'sweetalert';
+
 
 class Purchase extends React.Component {
 
@@ -26,8 +28,7 @@ class Purchase extends React.Component {
   }
 
   handleSubmit(e){
-    alert("Your purchase for the amount €"+this.state.Amount+ " has been received check you updated balance in the Wallet tab. Sending to    " + this.state.Address 
-    +" .....      ");
+    swal("Complete!", "₿"+this.state.Amount, "success");
     e.preventDefault();
     
     

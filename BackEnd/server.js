@@ -88,7 +88,7 @@ app.put('/api/coins/:id',(request,response)=>{
     console.log("Edit: "+request.params.id);
     console.log(request.body);
     
-    WalletModel.findByIdAndUpdate(request.params.id,
+    UserModel.findByIdAndUpdate(request.params.id,
         request.body,
         {new:true},
         (error,data)=>{
@@ -125,10 +125,13 @@ app.post('/api/users', (request,response)=>{
     console.log('Post request Successful');
     console.log(request.body.uname);
     console.log(request.body.pword);
+    console.log(request.body.btcADD);
+
 
     UserModel.create({
         uname:request.body.uname, 
         pword:request.body.pword,
+        btcADD:request.body.btcADD,
     });
 
     response.json('Account Received!');

@@ -1,9 +1,11 @@
-import React from 'react'
-import User from './users';
+import React from 'react';
 import axios from 'axios';
+import Button from 'react-bootstrap/Button';
+import Update from './update';
+import UpdateItem from './updateItem';
 
-class UsersRead extends React.Component{
 
+class UpdateUser extends React.Component{
     state = {
         users: []
     };
@@ -23,12 +25,13 @@ class UsersRead extends React.Component{
             
             <div>
             <br></br>
-            <h1 id="headMarket">Current Registered Accounts</h1>
+            <h1 id="headMarket">Update Account BTC Address</h1>
             <div className="App-header">
-                <h1><User myUsers={this.state.users}></User></h1>
+            <h4><UpdateItem myUsers={this.state.users}></UpdateItem></h4>
             </div>
             </div>
         );
     }
 }
-export default UsersRead;
+
+export default UpdateUser;

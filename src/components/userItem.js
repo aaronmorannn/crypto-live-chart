@@ -14,7 +14,7 @@ class UserItem extends React.Component{
             <Card.Header><h1 id="username">Username : {this.props.details.uname} </h1></Card.Header>
             <br></br>
             <h5 id="address">BTC Address :({this.props.details.btcADD})</h5>
-            <Nav.Link href="/content"><FaRegEdit size="25" color="green"></FaRegEdit></Nav.Link> 
+            <Nav.Link href="/updateUser"><FaRegEdit size="25" color="green"></FaRegEdit></Nav.Link> 
             </Card>
             <br></br>
             </div>
