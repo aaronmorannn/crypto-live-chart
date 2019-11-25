@@ -13,8 +13,7 @@ import Register from './components/register';
 import Login from './components/login';
 import {FaUserCircle} from 'react-icons/fa';
 import UsersRead from './components/usersRead';
-import UpdateUser from './components/updateUser';
-
+import Update from './components/update';
 
 
 
@@ -52,10 +51,7 @@ class App extends React.Component {
             <Route path="/register" component={Register} />
             <Route path="/login" component={Login} />
             <Route path="/usersRead" component={UsersRead} />
-            <Route path="/updateUser" component={UpdateUser} />
-
-
-
+            <Route path="/update/:id" component={Update} />
 
 
           </Switch>

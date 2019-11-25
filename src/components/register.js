@@ -88,6 +88,18 @@ class Register extends React.Component{
           />
           </div>
          <br></br>
+         <div className="forms">
+          <TextField
+            type="text"
+            id="standard"
+            label="BTC Address."
+            margin="normal"
+            className='form-control'
+            required="true"
+            value={this.state.BTC}
+            onChange={this.handleBTCChange}
+          />
+          </div>
           <div>
             <Button
             variant="dark" 

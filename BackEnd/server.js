@@ -13,6 +13,9 @@ const mongoDB = 'mongodb+srv://aaron:Aaronmoran2411@cluster0-8qas3.mongodb.net/p
 
 mongoose.connect(mongoDB,{useNewUrlParser:true});
 
+app.use(express.static(path.join(__dirname, '../build')));
+app.use('/static', express.static(path.join(__dirname, 'build//static')));
+
 app.use(cors());
 app.use(function (request, response, next) {
     response.header("Access-Control-Allow-Origin", "*");
@@ -29,8 +32,6 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 const Schema = mongoose.Schema;
-const Schema2 = mongoose.Schema;
-
 
 //WALLET VARIABLES
 const wallet = new Schema({
@@ -39,11 +40,10 @@ const wallet = new Schema({
 })
 
 //USER VARIABLES
-const users = new Schema2({
+const users = new Schema({
     uname:String,
     pword:String,
-    btcADD:String,
-  
+    btc:String,
 })
 
 const WalletModel = mongoose.model('wallet', wallet);
@@ -83,8 +83,17 @@ app.delete('/api/coins/:id', (request, response)=>{
         })
 })
 
+
 //EDITING DATA OF USERS FROM DATABASE
-app.put('/api/coins/:id',(request,response)=>{
+app.get('/api/users/:id', (request, response)=>{
+    console.log(request.params.id);
+
+    UserModel.findById(request.params.id, (error,data)=>{
+        response.json(data);
+    })
+})
+
+app.put('/api/users/:id',(request,response)=>{
     console.log("Edit: "+request.params.id);
     console.log(request.body);
     
@@ -94,15 +103,6 @@ app.put('/api/coins/:id',(request,response)=>{
         (error,data)=>{
             response.json(data);
         })
-})
-
-
-app.get('/api/coins/:id', (request,response)=>{
-    console.log("GET: "+request.params.id);
-
-    WalletModel.findById(request.params.id,(error, data)=>{
-        response.json(data);
-    })
 })
 
 
@@ -125,13 +125,13 @@ app.post('/api/users', (request,response)=>{
     console.log('Post request Successful');
     console.log(request.body.uname);
     console.log(request.body.pword);
-    console.log(request.body.btcADD);
+    console.log(request.body.btc);
 
 
     UserModel.create({
         uname:request.body.uname, 
         pword:request.body.pword,
-        btcADD:request.body.btcADD,
+        btc:request.body.btc,
     });
 
     response.json('Account Received!');

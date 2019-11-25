@@ -28,24 +28,9 @@ componentDidMount() {
           <br></br>
           <h1 id="headMarket">Withdraw a Purchase</h1>
               <div className='cryptocurrency-withdraw'>
-              {/* <label id="head">List of Purchase's.</label> */}
-              {/* <TextField
-              type="text"
-              id="standard-basic"
-              label="Enter BTC Address."
-              margin="normal"
-              className='form-control'
-              value={this.state.Amount}
-              onChange={this.handleMovieTitleChange}
-            />
 
-          <Button
-          type="submit"
-          value="Preview Purchase"
-          variant="contained" color="primary">
-            Search
-          </Button> */}
              <Coins myCoins={this.state.coins}></Coins>
+
             </div>
              </div>
         )
