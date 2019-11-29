@@ -39,7 +39,6 @@ class Register extends React.Component{
 
       handleSubmit(e){
         swal("Congratulations!", "You have created your account!", "success");
-        // alert("Your Account has been successfully created." + " Welcome " + this.state.Uname);
         e.preventDefault();
       
                     const newUser = {
@@ -57,6 +56,7 @@ class Register extends React.Component{
 
     render(){
         return(
+          // All registered user details are posted to the database.
           <div className="App-header">
           <h3>Create Account</h3>
           <hr></hr>

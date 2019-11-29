@@ -18,6 +18,8 @@ class Content extends React.Component {
 
 
   componentDidMount(){
+
+    // Fetching API data from coinlore website and returning it to the project.
     return fetch('https://api.coinlore.com/api/tickers/')
     .then((response) => response.json())
     .then((responseJson)=>{
@@ -41,10 +43,14 @@ class Content extends React.Component {
       )
     } else{
 
+      // DATA TAKES 10 SECONDS TO UPDATE
+
       let coins = this.state.dataSource.map((val,key) =>{
           return <div className="cryptocurrency-market" key={key}>
+          {/* Use of icons from react-icon framework */}
           <h1><AiOutlineFire/> {val.rank}</h1>
           <hr></hr>
+          {/* Displaying the name, symbol, price, and price update every 1 hour from the API data. */}
           <h1>{val.name}</h1>
           <h3>{val.symbol}</h3>
           <p id="price">${val.price_usd}</p>

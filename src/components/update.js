@@ -14,13 +14,11 @@ class Edit extends React.Component{
                       _id:''};
     
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleMovieTitleChange = this.handleMovieTitleChange.bind(this);
         this.handlePwordChange = this.handlePwordChange.bind(this);
         this.handleBTCChange = this.handleBTCChange.bind(this);
       }
 
     componentDidMount(){
-    // swal("You're about to Update your username. " + this.props.match.params.id);
 
 
     axios.get('http://localhost:4000/api/users/'+this.props.match.params.id)
@@ -34,10 +32,6 @@ class Edit extends React.Component{
     })
     .catch();
 }
-
-  handleMovieTitleChange(e){
-    this.setState({Uname: e.target.value});
-  }
 
   handlePwordChange(e){
     this.setState({Pword: e.target.value});

@@ -24,6 +24,7 @@ class CoinItem extends React.Component{
             <div>              
             <br></br>
             <Card  border="primary" style={{ width: '28rem' }}>
+            {/* Displaying the list of purchases - pulled from the server */}
             <h1><Card.Header>₿{this.props.wallet.amount}</Card.Header></h1>
             </Card>
             <hr></hr>

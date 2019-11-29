@@ -20,7 +20,7 @@ class UsersRead extends React.Component{
 
     render(){
         return(
-            
+            // List of current registered Users
             <div>
             <br></br>
             <h1 id="headMarket">Current Registered Accounts</h1>

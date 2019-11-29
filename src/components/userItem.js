@@ -24,10 +24,11 @@ class UserItem extends React.Component{
 
 
     render(){
+
         return(
             <div>
             <Card  border="primary" style={{ width: '28rem' }}>
-            <Card.Header><h1 id="username">Username : {this.props.details.uname} </h1></Card.Header>
+            <Card.Header><h3 id="username">Username : {this.props.details.uname} </h3></Card.Header>
             <br></br>
             <h5 id="address">BTC Address :({this.props.details.btc})</h5>
             <Nav.Link href={"/update/"+ this.props.details._id}><FaRegEdit size="25" color="green"></FaRegEdit></Nav.Link> 

@@ -28,6 +28,7 @@ class Purchase extends React.Component {
   }
 
   handleSubmit(e){
+    // Use of swal alert framework
     swal("Complete Transaction!", "₿ "+this.state.Amount, "success");
     e.preventDefault();
     
@@ -59,6 +60,7 @@ class Purchase extends React.Component {
           label="Enter Value."
           margin="normal"
           required="true"
+          // This only allows the user to purchase between 0 and 1 BTC, allowing decimals.
           InputProps={{ inputProps: { min: 0.0, max: 1, step:0.000001 } }}
           className='form-control'
           value={this.state.Amount}
@@ -68,6 +70,8 @@ class Purchase extends React.Component {
         
         <div className="cryptocurrency">
         <h4 id="example">(Example - 35zTpEpUkqgRNEsRvhonFBxHtwqiioqNhw)</h4>
+
+        {/* TEXTFIELD & BUTTON used and imported through the Material UI */}
         <TextField
           type="text"
           id="standard"

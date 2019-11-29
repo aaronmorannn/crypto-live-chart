@@ -1,6 +1,3 @@
-// Code Below contains content from Server.js from MERN LABS 
-// Code has been changed and altered to suit the needs of the application.
-
 const express = require('express')
 const app = express()
 const port = 4000
@@ -9,8 +6,11 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
 
+// MongoDB admin access
 const mongoDB = 'mongodb+srv://aaron:Aaronmoran2411@cluster0-8qas3.mongodb.net/purchases?retryWrites=true&w=majority';
 
+
+// Establish Connections
 mongoose.connect(mongoDB,{useNewUrlParser:true});
 
 app.use(express.static(path.join(__dirname, '../build')));
@@ -50,11 +50,11 @@ const WalletModel = mongoose.model('wallet', wallet);
 const UserModel = mongoose.model('users', users);
 
 
-app.get('/name', (request, response) => {
-    console.log(request.query.lastname)
-    res.send('Welcome ' + request.query.firstname +
-        ' ' + request.query.lastname);
-})
+// app.get('/name', (request, response) => {
+//     console.log(request.query.lastname)
+//     res.send('Welcome ' + request.query.firstname +
+//         ' ' + request.query.lastname);
+// })
 
 //PULLING DATA FROM THE DATABASE 
 app.get('/api/coins', (request, response) => {
@@ -122,7 +122,7 @@ app.post('/api/coins', (request,response)=>{
 
 //ADDING USER DETAILS TO DATABASE HISTORY
 app.post('/api/users', (request,response)=>{
-    console.log('Post request Successful');
+    console.log('Account Creation Successful');
     console.log(request.body.uname);
     console.log(request.body.pword);
     console.log(request.body.btc);
@@ -133,7 +133,6 @@ app.post('/api/users', (request,response)=>{
         pword:request.body.pword,
         btc:request.body.btc,
     });
-
     response.json('Account Received!');
 })
 
