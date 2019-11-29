@@ -12,11 +12,10 @@ class UserItem extends React.Component{
 
     constructor(){
         super();
-        this.DeleteMovie = this.DeleteMovie.bind(this);
+        this.UpdateUser = this.UpdateUser.bind(this);
       }
     
-      DeleteMovie(e){
-        console.log("Delete Clicked");
+      UpdateUser(e){
         axios.delete("http://localhost:4000/api/users/"+this.props.details._id)
         .then()
         .catch();

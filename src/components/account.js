@@ -38,7 +38,7 @@ class Login extends React.Component{
                 </InputGroup>
                 <hr></hr>
 
-                <Button variant="dark" onClick={this.DeleteMovie}><Nav.Link  href="/content">Log In</Nav.Link></Button>
+                <Button variant="dark"><Nav.Link  href="/content">Log In</Nav.Link></Button>
                 <br></br>
             
 

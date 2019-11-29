@@ -51,14 +51,14 @@ class Edit extends React.Component{
     swal("Congratulations "+ this.state.Uname+"!", "You have Updated your account!", "success");
     e.preventDefault();
     
-    const newMovie = {
+    const newUser = {
         uname: this.state.Uname,
         pword: this.state.Pword,
         btc: this.state.BTC
     };
 
     axios.put('http://localhost:4000/api/users/'+this.state._id, 
-    newMovie)
+    newUser)
     .then()
     .catch();
 

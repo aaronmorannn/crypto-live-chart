@@ -28,7 +28,7 @@ class Purchase extends React.Component {
   }
 
   handleSubmit(e){
-    swal("Complete!", "₿"+this.state.Amount, "success");
+    swal("Complete Transaction!", "₿ "+this.state.Amount, "success");
     e.preventDefault();
     
     
