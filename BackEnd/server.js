@@ -1,9 +1,9 @@
-const express = require('express')
+const express = require('./node_modules/express')
 const app = express()
 const port = 4000
 const path = require('path');
-const bodyParser = require('body-parser');
-const cors = require('cors');
+const bodyParser = require('./node_modules/body-parser');
+const cors = require('./node_modules/cors');
 const mongoose = require('mongoose');
 
 // MongoDB admin access

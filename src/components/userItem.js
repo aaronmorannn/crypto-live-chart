@@ -1,10 +1,8 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-import { Link } from 'react-router-dom';
 import {FaRegEdit} from 'react-icons/fa';
 import axios from 'axios';
 import Nav from 'react-bootstrap/Nav';
-import Button from 'react-bootstrap/Button';
 
 
 
