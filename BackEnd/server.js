@@ -1,9 +1,9 @@
-const express = require('./node_modules/express')
+const express = require('express')
 const app = express()
 const port = 4000
 const path = require('path');
-const bodyParser = require('./node_modules/body-parser');
-const cors = require('./node_modules/cors');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 const mongoose = require('mongoose');
 
 // MongoDB admin access
@@ -49,12 +49,6 @@ const users = new Schema({
 const WalletModel = mongoose.model('wallet', wallet);
 const UserModel = mongoose.model('users', users);
 
-
-// app.get('/name', (request, response) => {
-//     console.log(request.query.lastname)
-//     res.send('Welcome ' + request.query.firstname +
-//         ' ' + request.query.lastname);
-// })
 
 //PULLING DATA FROM THE DATABASE 
 app.get('/api/coins', (request, response) => {
@@ -108,7 +102,7 @@ app.put('/api/users/:id',(request,response)=>{
 
 //ADDING PURCHASE TO DATABASE HISTORY
 app.post('/api/coins', (request,response)=>{
-    console.log('Post request Successful');
+    console.log('Purchase Successful');
     console.log(request.body.amount);
     console.log(request.body.address);
 
