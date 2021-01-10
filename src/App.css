@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  background-color:  #88a9e7;
   font-size: x-large;
 
 }
@@ -10,7 +9,6 @@
 }
 
 .App-header {
-  background-color:#88a9e7;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -107,19 +105,43 @@ Nav.Link {
 
 }
 
+.option{
+  color:white!important;
+  margin-right: 5rem;
+}
+
+.option-refresh{
+  margin-right: 5rem;
+  border-radius: 5px;
+  background:white;
+  color:black!important;
+  transition: 0.2s;
+}
+
+.option-refresh:hover{
+  border-radius: 5px;
+  background:whitesmoke;
+  color:black!important;
+  transition: 0.2s;
+}
+
+
 .cryptocurrency-market{
   padding: 1rem 4rem 2rem;
   margin: 1rem;
-  border-radius: 0.5;
-  border: solid 1px black;
-
+  border-radius: 5px;
   background-color: whitesmoke;
-  min-width: 9rem;
-  border: solid 5px rgba(0,0,0,0.05);
-  border-bottom: solid 4px rgba(0,0,0,0.05);
-  border-top: solid 4px rgba(0,0,0,0.05);
-  float: left;
+  width: 400px;
+  float:left;
+  margin-left: 2.5rem;
+  margin-right: 2rem;
+  border:1px solid lightgray;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  cursor: pointer;
+}
 
+.cryptocurrency-market:hover{
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
 .cryptocurrency-purchase{

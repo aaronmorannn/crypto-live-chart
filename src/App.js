@@ -14,9 +14,7 @@ import Login from './components/login';
 import {FaUserCircle} from 'react-icons/fa';
 import UsersRead from './components/usersRead';
 import Update from './components/update';
-
-
-
+import {FiRefreshCw} from 'react-icons/fi'
 
 class App extends React.Component {
 
@@ -25,24 +23,25 @@ class App extends React.Component {
       <BrowserRouter>
         <div className="App">
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand href="/content"> <img src={logo} width="100px" height="90px"></img></Navbar.Brand>
             <Nav className="mr-auto">
-              <Nav.Link href="/content">Market</Nav.Link>
-              <Nav.Link href="/read">Wallet</Nav.Link>
+              <Nav.Link href="/content" className="option">Crypto Live Charts</Nav.Link>
+              <Nav.Link href="/content" className="option-refresh">Refresh <FiRefreshCw/></Nav.Link>
+
+              {/* <Nav.Link href="/read">Wallet</Nav.Link>
               <Nav.Link href="/purchase">Purchase</Nav.Link>
               <Nav.Link href="/withdraw">Withdraw</Nav.Link>
-              <Nav.Link href="/usersRead">Users</Nav.Link>
+              <Nav.Link href="/usersRead">Users</Nav.Link> */}
 
 
 
             </Nav>
             <Nav>
-            <Nav.Link href="/register"> <FaUserCircle size={50}/></Nav.Link>
+            {/* <Nav.Link href="/register"> <FaUserCircle size={50}/></Nav.Link> */}
             </Nav>
 
           </Navbar>
           <Switch>
-            <Route exact path="/" component={Register} />
+            <Route exact path="/" component={Content} />
             <Route path="/content" component={Content} />
             <Route path="/purchase" component={Purchase} />
             <Route path="/read" component={Read} />
