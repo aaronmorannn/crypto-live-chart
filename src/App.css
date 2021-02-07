@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
 .App {
   text-align: center;
   font-size: x-large;
@@ -106,8 +108,10 @@ Nav.Link {
 }
 
 .option{
-  color:white!important;
-  margin-right: 5rem;
+  color:black!important;
+  font-size: 30px;
+  text-align: center;
+  font-family: 'Orbitron', sans-serif!important;
 }
 
 .option-refresh{
@@ -131,17 +135,27 @@ Nav.Link {
   margin: 1rem;
   border-radius: 5px;
   background-color: whitesmoke;
-  width: 400px;
+  width: 300px;
   float:left;
-  margin-left: 2.5rem;
+  height:250px;
+  margin-left: 4.5rem;
   margin-right: 2rem;
   border:1px solid lightgray;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-  cursor: pointer;
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 0.0px );
+  -webkit-backdrop-filter: blur( 0.0px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );  cursor: pointer;
 }
 
 .cryptocurrency-market:hover{
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  background: rgba( 255, 255, 255, 1.00 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 16.5px );
+  -webkit-backdrop-filter: blur( 16.5px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 .cryptocurrency-purchase{

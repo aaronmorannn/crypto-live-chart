@@ -1,5 +1,7 @@
 import React from 'react';
 import '../App.css';
+import ScrollToTop from 'react-scroll-up'
+import {FaEthereum} from 'react-icons/fa'
 
 class Content extends React.Component {
 
@@ -45,7 +47,7 @@ class Content extends React.Component {
           return <div className="cryptocurrency-market" key={key}>
           {/* Use of icons from react-icon framework */}
           {/* Displaying the name, symbol, price, and price update every 1 hour from the API data. */}
-          <h4>{val.name}</h4>
+          <h5>{val.name}</h5>
           <h6>({val.symbol})</h6>
           <p id="price">${val.price_usd}</p>
           <p>{val.percent_change_1h}%</p>
@@ -60,6 +62,9 @@ class Content extends React.Component {
       <hr></hr>
        <div className="App-header">
         <h1>{coins}</h1>
+        <ScrollToTop showUnder={160}>
+          <span><FaEthereum/></span>
+        </ScrollToTop>
        </div>
        <div>             
       </div>

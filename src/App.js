@@ -22,24 +22,7 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <div className="App">
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-            <Nav className="mr-auto">
-              <Nav.Link href="/content" className="option">Crypto Live Charts</Nav.Link>
-              <Nav.Link href="/content" className="option-refresh">Refresh <FiRefreshCw/></Nav.Link>
-
-              {/* <Nav.Link href="/read">Wallet</Nav.Link>
-              <Nav.Link href="/purchase">Purchase</Nav.Link>
-              <Nav.Link href="/withdraw">Withdraw</Nav.Link>
-              <Nav.Link href="/usersRead">Users</Nav.Link> */}
-
-
-
-            </Nav>
-            <Nav>
-            {/* <Nav.Link href="/register"> <FaUserCircle size={50}/></Nav.Link> */}
-            </Nav>
-
-          </Navbar>
+          <a href="/content" className="option">Crypto Live Charts</a>
           <Switch>
             <Route exact path="/" component={Content} />
             <Route path="/content" component={Content} />
